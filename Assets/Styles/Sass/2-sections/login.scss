@@ -1,0 +1,109 @@
+.fluid-container {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background:url('../../Images/noise-bg.png');
+  .login-container {
+    width: 50%;
+    height: 60%;
+    display: block;
+    margin: 8% auto;
+    background-color: rgb(92, 92, 92);
+    border-radius: 15px;
+    -o-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border: 10px solid rgb(176, 204, 212);
+    -webkit-box-shadow: -20px 20px 13px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -20px 20px 13px 5px rgba(0,0,0,0.75);
+    box-shadow: -20px 20px 13px 5px rgba(0,0,0,0.75);
+    .login-row {
+      display: flex;
+      width: 90%;
+      height: 96%;
+      margin: 5% 2%;
+      #col-1,#col-2 {
+        width: 50%;
+      }
+      .login-info {
+        background-image: url('../../Images/badge.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        .site-title {
+          text-align: center;
+          color:rgb(176, 204, 212);
+        }
+        .site-desc {
+          font-weight: 300;
+          text-align: center;
+          color:rgb(98, 163, 191);
+        }
+      }
+      .login-form-container {
+        flex-wrap: wrap;
+        .login-hero-title {
+          color:rgb(98, 163, 191);
+          font-size: 50px;
+        }
+        .login-form {
+          align-self: center;
+          [type="text"],[type="password"] {
+            padding: 10px 5px;
+            border: 2px solid rgb(98, 163, 191);
+            border-radius: 15px;
+            -o-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            &:focus {
+              outline: none;
+              box-shadow: 0 0 1pt 1pt rgb(98, 163, 191);
+            }
+            &:hover {
+              box-shadow: 0 0 1pt 1pt rgb(98, 163, 191);
+            }
+          }
+          [type="password"] {
+            margin-left: 5px;
+          }
+          [type="submit"] {
+            margin-top: 25px;
+            border-radius: 15px;
+            -o-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border: 2px solid rgb(98, 163, 191);
+            width: 85px;
+            height: 30px;
+            background-color: white;
+            &:focus {
+              outline: none;
+              box-shadow: 0 0 1pt 1pt rgb(98, 163, 191);
+            }
+            &:hover {
+              transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+              color:rgb(176, 204, 212);
+              cursor: pointer;
+              background-color:rgb(231, 228, 228);
+            }
+          }
+        }
+        .login-options {
+          a {
+            margin-top:50px;
+            color:rgb(98, 163, 191);
+            text-decoration: none;
+            &:hover {
+              color:rgb(176, 204, 212);
+            }
+          }
+          .register {
+            float: left;
+          }
+          .forgot-password {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}

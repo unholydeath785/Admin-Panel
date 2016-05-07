@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,300,200,700);
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif; }
+
+.fluid-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("../../Images/noise-bg.png"); }
+  .fluid-container .login-container {
+    width: 50%;
+    height: 60%;
+    display: block;
+    margin: 8% auto;
+    background-color: #5c5c5c;
+    border-radius: 15px;
+    -o-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border: 10px solid #b0ccd4;
+    -webkit-box-shadow: -20px 20px 13px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -20px 20px 13px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: -20px 20px 13px 5px rgba(0, 0, 0, 0.75); }
+    .fluid-container .login-container .login-row {
+      display: flex;
+      width: 90%;
+      height: 96%;
+      margin: 5% 2%; }
+      .fluid-container .login-container .login-row #col-1, .fluid-container .login-container .login-row #col-2 {
+        width: 50%; }
+      .fluid-container .login-container .login-row .login-info {
+        background-image: url("../../Images/badge.png");
+        background-position: center center;
+        background-repeat: no-repeat; }
+        .fluid-container .login-container .login-row .login-info .site-title {
+          text-align: center;
+          color: #b0ccd4; }
+        .fluid-container .login-container .login-row .login-info .site-desc {
+          font-weight: 300;
+          text-align: center;
+          color: #62a3bf; }
+      .fluid-container .login-container .login-row .login-form-container {
+        flex-wrap: wrap; }
+        .fluid-container .login-container .login-row .login-form-container .login-hero-title {
+          color: #62a3bf;
+          font-size: 50px; }
+        .fluid-container .login-container .login-row .login-form-container .login-form {
+          align-self: center; }
+          .fluid-container .login-container .login-row .login-form-container .login-form [type="text"], .fluid-container .login-container .login-row .login-form-container .login-form [type="password"] {
+            padding: 10px 5px;
+            border: 2px solid #62a3bf;
+            border-radius: 15px;
+            -o-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px; }
+            .fluid-container .login-container .login-row .login-form-container .login-form [type="text"]:focus, .fluid-container .login-container .login-row .login-form-container .login-form [type="password"]:focus {
+              outline: none;
+              box-shadow: 0 0 1pt 1pt #62a3bf; }
+            .fluid-container .login-container .login-row .login-form-container .login-form [type="text"]:hover, .fluid-container .login-container .login-row .login-form-container .login-form [type="password"]:hover {
+              box-shadow: 0 0 1pt 1pt #62a3bf; }
+          .fluid-container .login-container .login-row .login-form-container .login-form [type="password"] {
+            margin-left: 5px; }
+          .fluid-container .login-container .login-row .login-form-container .login-form [type="submit"] {
+            margin-top: 25px;
+            border-radius: 15px;
+            -o-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            border: 2px solid #62a3bf;
+            width: 85px;
+            height: 30px;
+            background-color: white; }
+            .fluid-container .login-container .login-row .login-form-container .login-form [type="submit"]:focus {
+              outline: none;
+              box-shadow: 0 0 1pt 1pt #62a3bf; }
+            .fluid-container .login-container .login-row .login-form-container .login-form [type="submit"]:hover {
+              transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+              color: #b0ccd4;
+              cursor: pointer;
+              background-color: #e7e4e4; }
+        .fluid-container .login-container .login-row .login-form-container .login-options a {
+          margin-top: 50px;
+          color: #62a3bf;
+          text-decoration: none; }
+          .fluid-container .login-container .login-row .login-form-container .login-options a:hover {
+            color: #b0ccd4; }
+        .fluid-container .login-container .login-row .login-form-container .login-options .register {
+          float: left; }
+        .fluid-container .login-container .login-row .login-form-container .login-options .forgot-password {
+          float: right; }
+
+/*# sourceMappingURL=main.css.map */
