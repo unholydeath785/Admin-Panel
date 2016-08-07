@@ -1,17 +1,41 @@
 <?php
 include_once 'Assets/Scripts/PHP/connect.php';
-include_once 'Assets/Scripts/PHP/functions.php';
 
-sec_session_start();
-
-if (login_check($mysqli) == true) {
-    $logged = 'in';
-} else {
-    $logged = 'out';
+session_start();
+if (isset($_SESSION['username']) && $_SESSION['username'] !='') {
+  header("Location:index.php");
 }
-
-if ($logged == 'in') {
-  header('home.html');
+if (isset($_POST['submit'])) {
+  $dbh = new PDO('mysql:dbname=Admin-Panel;host=localhost','root','');
+  $user = $_POST['user'];
+  $password = $_POST['pass'];
+  if (isset($_POST) && $user != '' && $password != '') {
+    $sql = $dbh -> prepare("SELECT id, password, psalt FROM users WHERE username=?");
+    $sql -> execute(array($user));
+    while ($r = $sql -> fetch()) {
+      $p = $r['password'];
+      $p_salt = $r['psalt'];
+      $id = $r['id'];
+    }
+    if (isset($p_salt) && $p_salt != "") {
+      $site_salt = "myAdminsalt";
+      $salted_hash = hash('sha256', $password.$site_salt.$p_salt);
+      if ($p == $salted_hash) {
+        $_SESSION['username'] = $user;
+        $_SESSION['id'] = $id;
+        $_SESSION['site'] = "LittleBit";
+        $_SESSION['name'] = "Evan";
+        $url = "index.php?zone=".$_GET['zone'];
+        header("Location:".$url);
+      } else {
+        echo("<br><h1> Login Failed </h1><br>");
+      }
+    } else {
+      echo("<br><h1> Login Failed </h1><br>");
+    }
+  } else {
+    echo("<br><h1> Login Failed </h1><br>");
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -22,11 +46,6 @@ if ($logged == 'in') {
     <link rel="stylesheet" href="Assets/Styles/CSS/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
-        }
-    ?>
     <div class="fluid-container">
       <div class="login-container">
         <div class="login-row" id="row-1">
@@ -36,9 +55,9 @@ if ($logged == 'in') {
           </div>
           <div class="login-form-container" id="col-2">
             <h1 class="login-hero-title">Login</h1>
-            <form class="login-form" action="Assets/Scripts/PHP/process-login.php" name="login_form" method="post">
-              <input type="text" name="username" placeholder="Username...">
-              <input type="password" name="password" placeholder="Password...">
+            <form class="login-form" action="" name="login_form" method="post">
+              <input type="text" name="user" placeholder="Username...">
+              <input type="password" name="pass" placeholder="Password...">
               <button type="submit" value="Login" name="submit">Login</button>
             </form>
             <div class="login-options">
@@ -52,5 +71,16 @@ if ($logged == 'in') {
     </div>
     <script src="Assets/Scripts/JS/jquery.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/main.js" charset="utf-8"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var tz = jstz.determine();
+      var timezone = tz.name();
+      var url = "http://localhost/Admin-Panel/login.php" +'?zone=' + timezone;
+      var currentUrl = window.location.href;
+      if (currentUrl != url) {
+          window.location.href = url;
+      }
+      console.log(timezone);
+    </script>
   </body>
 </html>

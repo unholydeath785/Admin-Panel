@@ -4,4 +4,7 @@ body,html {
   font-family: 'Titillium Web', sans-serif;
 }
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,300,200,700);
-@import "2-sections/login.scss"
+@import "2-sections/login.scss";
+@import "2-sections/navbar.scss";
+@import "2-sections/body.scss";
+@import "2-sections/modal.scss";

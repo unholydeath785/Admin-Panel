@@ -1,0 +1,55 @@
+.row {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  .panel-container {
+    margin-left: 100px;
+    width: 90%;
+    background-color: rgb(185, 185, 185);
+    border: 2px solid rgb(156, 156, 156);
+    .panel-header {
+      display: flex;
+      height: 75px;
+      border-bottom: 2px solid rgb(156, 156, 156);
+      .panel-title {
+        padding-bottom: 10px;
+        margin-left: 15px;
+      }
+      .panel-icons {
+        height: inherit;
+        align-self: flex-end;
+        margin-left: 50%;
+        display: flex;
+        .icon-container {
+          height: inherit;
+          width:50px;
+          img {
+            margin-top: 25px;
+            margin-left: 15px;
+            width: 25px;
+            height: 25px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            background-color: rgb(200, 200, 200);
+          }
+        }
+      }
+    }
+    .panel-body {
+      #chart_div {
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#row-1 {
+  height: 431px;
+}

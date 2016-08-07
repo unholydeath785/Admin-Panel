@@ -1,4 +1,11 @@
 <?php
-include_once 'admin-pannel-php-config.php';
-$mysqli = new mysqli(HOST,USER,PASSWORD,DATABASE)
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$conn = new mysqli($servername,$username,$password);
+
+if ($conn->connect_error) {
+  die ("Connection failed: " . $conn->connect_error);
+}
  ?>

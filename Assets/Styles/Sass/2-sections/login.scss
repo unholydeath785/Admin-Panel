@@ -27,25 +27,32 @@
       }
       .login-info {
         background-image: url('../../Images/badge.png');
+      }
+      .login-info, .register-info {
         background-position: center center;
         background-repeat: no-repeat;
-        .site-title {
+        .site-title, .register-title {
           text-align: center;
           color:rgb(176, 204, 212);
         }
-        .site-desc {
+        .site-desc, .register-desc {
           font-weight: 300;
           text-align: center;
           color:rgb(98, 163, 191);
         }
       }
-      .login-form-container {
+      .login-form-container,.register-form-container {
         flex-wrap: wrap;
         .login-hero-title {
           color:rgb(98, 163, 191);
           font-size: 50px;
         }
         .login-form {
+          [type="password"] {
+            margin-left: 5px;
+          }
+        }
+        .login-form,.register-form {
           align-self: center;
           [type="text"],[type="password"] {
             padding: 10px 5px;
@@ -62,9 +69,7 @@
               box-shadow: 0 0 1pt 1pt rgb(98, 163, 191);
             }
           }
-          [type="password"] {
-            margin-left: 5px;
-          }
+
           [type="submit"] {
             margin-top: 25px;
             border-radius: 15px;
@@ -102,6 +107,22 @@
           .forgot-password {
             float: right;
           }
+        }
+        .register-hero-title {
+            color:rgb(98, 163, 191);
+            font-size: 50px;
+        }
+      }
+      .register-form-container {
+        .register-hero-title {
+          text-align: center;
+        }
+        label {
+          color: white;
+          margin-right: 15px;
+          width: 200px;
+        }
+        input {
         }
       }
     }
