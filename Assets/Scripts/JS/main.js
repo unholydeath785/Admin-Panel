@@ -90,3 +90,8 @@ $('#minimize-container').click(function () {
     })
   }
 })
+
+$('.message-item').click(function () {
+  var userto = $(this).data("userto");
+  window.location.href = "messages.php?userto="+userto;
+})

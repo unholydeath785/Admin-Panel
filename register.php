@@ -5,10 +5,11 @@ if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
 }
 
 if (isset($_POST['submit'])) {
-  $dbuser = "root";
-  $dbpass = "";
-  $dbhost = "localhost";
-  $dbh = new PDO('mysql:dbname=Admin-Panel;host'.$dbhost.'',$dbuser,$dbpass);
+  // $dbuser = "unholyde_ath7856";
+  // $dbpass = "Bertschi2012";
+  // $dbhost = "localhost";
+  // $dbh = new PDO('mysql:dbname=unholyde_ath7856_AdminPanel;host'.$dbhost.'',$dbuser,$dbpass);
+  $dbh = new PDO('mysql:dbname=Admin-Panel;host=localhost','root','');
   if (isset($_POST['user']) && isset($_POST['pass1'])) {
     $password = $_POST['pass1'];
     $checkPass= $_POST['pass2'];

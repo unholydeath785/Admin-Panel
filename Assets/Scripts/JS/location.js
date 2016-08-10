@@ -43,4 +43,4 @@ timeout: 1000,
 maximumAge: 0
 };
 
-navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options);
+navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options);local

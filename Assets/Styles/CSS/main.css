@@ -373,4 +373,98 @@ body, html {
       #calendar .calendar-table .week:hover {
         cursor: pointer; }
 
+.msg-container {
+  width: 100%; }
+  .msg-container .header {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 56px;
+    background-color: #ebebeb;
+    letter-spacing: 2px;
+    text-align: center;
+    height: 100px; }
+    .msg-container .header .back {
+      width: 50px;
+      height: 50px;
+      margin-right: 25px;
+      margin-top: 25px; }
+      .msg-container .header .back:hover {
+        transition: transform 0.15s ease-in-out;
+        transform: scale(1.15); }
+  .msg-container .msg-area {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%; }
+    .msg-container .msg-area .typing {
+      width: 50px;
+      height: 50px;
+      margin: 25px; }
+    .msg-container .msg-area .col {
+      display: flex;
+      flex-direction: column; }
+      .msg-container .msg-area .col .message-container {
+        display: block;
+        margin: 25px;
+        width: 35%;
+        min-height: 36px; }
+        .msg-container .msg-area .col .message-container .msg {
+          background-color: #2ac6ff;
+          min-height: 20px;
+          width: 100%;
+          padding: 3px 3px 3px 5px;
+          word-wrap: break-word; }
+        .msg-container .msg-area .col .message-container .info {
+          color: #b0b0b0;
+          font-style: italic; }
+  .msg-container #sent {
+    color: white;
+    align-self: flex-end; }
+    .msg-container #sent .info {
+      text-align: right; }
+  .msg-container #received {
+    align-self: flex-start; }
+    .msg-container #received .msg {
+      background-color: #9e9e9e; }
+    .msg-container #received .info {
+      text-align: left; }
+  .msg-container .bottom {
+    border-top: 1px solid black;
+    height: 76px;
+    width: 100%;
+    background-color: #c7c4c4; }
+    .msg-container .bottom input {
+      border-radius: 3px;
+      margin: 20px 15px;
+      width: 97%;
+      border: none;
+      padding: 0 10px;
+      font-size: 16px;
+      overflow: scroll;
+      word-wrap: normal;
+      height: 35px; }
+      .msg-container .bottom input:focus {
+        outline: none; }
+
+.context-menu {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  color: white; }
+  .context-menu .context-menu__items {
+    background-color: #383838;
+    margin: 0;
+    padding: 5px 0;
+    list-style: none; }
+    .context-menu .context-menu__items .context-menu__item {
+      background-color: #383838;
+      padding: 5px 10px;
+      border-bottom: 1px solid #414141; }
+      .context-menu .context-menu__items .context-menu__item:hover {
+        cursor: pointer;
+        background-color: #606060; }
+
+.context-menu--active {
+  display: block; }
+
 /*# sourceMappingURL=main.css.map */

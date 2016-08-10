@@ -1,6 +1,7 @@
 <?php
 $range_string = $_GET['range'];
 $conn = mysqli_connect("localhost","root","","Admin-Panel");
+// $conn = mysqli_connect("localhost","unholyde_ath7856","Bertschi2012","unholyde_ath7856_AdminPanel");
 $date = explode("_",$range_string);
 $date1 = $date[0];
 $date2 = $date[1];
