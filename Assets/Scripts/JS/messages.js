@@ -10,9 +10,11 @@ var msginput = $('#msginput');
 var msgarea = $('#message-area');
 var prevLeng = 0;
 var typing = "false";
+var timeout;
 
 function updateTyping(bool) {
   typing = bool + "";
+  clearTimeout(timeout);
   $.ajax({
     type:"GET",
     url:"Assets/Scripts/PHP/get_username.php",
@@ -23,7 +25,7 @@ function updateTyping(bool) {
         type:"GET",
         url: URL
       })
-      setTimeout(function () {
+      timeout = setTimeout(function () {
         typing = false + "";
         var URL = "Assets/Scripts/PHP/typing.php?typing=" + typing + "&username=" + username + "";
         $.ajax({
@@ -62,13 +64,6 @@ function update() {
               }
             }
           }
-          if (rl > prevLeng) {
-            setTimeout(function () {
-              var obj = document.getElementById("message-area");
-              obj.scrollTop = obj.scrollHeight;
-            }, 250);
-            prevLeng = rl;
-          }
           URL = "Assets/Scripts/PHP/get_typing.php?username=" + userto + "";
           $.ajax({
             type:"GET",
@@ -76,8 +71,16 @@ function update() {
             success:function (data) {
               if (data == "true" || data == true) {
                 output += '<img class="typing" src="Assets/Images/typing.gif" alt="" />';
+                rl += 1;
               }
               $(msgarea).html(output);
+              if (rl > prevLeng) {
+                setTimeout(function () {
+                  var obj = document.getElementById("message-area");
+                  obj.scrollTop = obj.scrollHeight;
+                }, 500);
+                prevLeng = rl;
+              }
             }
           })
         }
@@ -110,17 +113,17 @@ function sendmsg() {
 }
 
 function showDate(e) {
-  var URL = "Assets/Scripts/PHP/get_msg_date.php?message=" + message + "";
-  console.log(e);
-  $.ajax({
-    type:"GET",
-    url:URL,
-    success:function (data) {
-      console.log(data);
-    }
-  })
+  // var message = "deez nuts"
+  // var URL = "Assets/Scripts/PHP/get_msg_date.php?message=" + message + "";
+  // $.ajax({
+  //   type:"GET",
+  //   url:URL,
+  //   success:function (data) {
+  //
+  //   }
+  // })
 }
 
 setInterval(function () {
   update();
-}, 1000);
+}, 750);

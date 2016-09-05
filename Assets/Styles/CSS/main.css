@@ -157,6 +157,18 @@ body, html {
         .navbar-top .messages .message-dropdown .message-item:hover, .navbar .messages .message-dropdown .message-item:hover {
           transition: background-color 0.5s ease-in-out;
           background-color: #e4e4e4; }
+      .navbar-top .messages .message-dropdown #live-usernames, .navbar .messages .message-dropdown #live-usernames {
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        list-style: none; }
+        .navbar-top .messages .message-dropdown #live-usernames .username-item, .navbar .messages .message-dropdown #live-usernames .username-item {
+          padding: 5px 3px;
+          list-style: none; }
+          .navbar-top .messages .message-dropdown #live-usernames .username-item:hover, .navbar .messages .message-dropdown #live-usernames .username-item:hover {
+            transition: 0.25s background-color ease-in-out, 0.25s color ease-in-out;
+            background-color: #494949;
+            color: white; }
   .navbar-top .user, .navbar .user {
     list-style: none;
     padding-top: 10px;
@@ -256,14 +268,31 @@ body, html {
     background-color: #d4d3db;
     border: 1px solid #dfdded; }
 
+#row-2 {
+  margin-top: 550px; }
+
+#network-analytics {
+  width: 90%; }
+
+#device-usage {
+  width: 33%;
+  z-index: 2; }
+  #device-usage .panel-title {
+    width: 50%; }
+
+#location {
+  width: 52%;
+  margin-left: 46%; }
+
 .row {
   position: absolute;
   margin-top: 100px;
   width: 100%;
   display: flex; }
   .row .panel-container {
+    min-width: 36%;
     margin-left: 100px;
-    width: 90%;
+    width: 50%;
     background-color: #b9b9b9;
     border: 2px solid #9c9c9c; }
     .row .panel-container .panel-header {
@@ -276,7 +305,7 @@ body, html {
       .row .panel-container .panel-header .panel-icons {
         height: inherit;
         align-self: flex-end;
-        margin-left: 50%;
+        margin-left: 45%;
         display: flex; }
         .row .panel-container .panel-header .panel-icons .icon-container {
           height: inherit;
@@ -305,7 +334,7 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.76);
-  z-index: 4; }
+  z-index: 40; }
   .modal-overlay .modal {
     display: none;
     margin: 10% auto;

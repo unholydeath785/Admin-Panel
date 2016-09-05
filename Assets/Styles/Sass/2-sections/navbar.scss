@@ -62,6 +62,21 @@
           background-color: rgb(228, 228, 228);
         }
       }
+      #live-usernames {
+        padding: 0;
+        margin: 0;
+        margin-top:10px;
+        list-style: none;
+        .username-item {
+          padding: 5px 3px;
+          list-style: none;
+          &:hover {
+            transition: 0.25s background-color ease-in-out, 0.25s color ease-in-out;
+            background-color:rgb(73, 73, 73);
+            color:white;
+          }
+        }
+      }
     }
   }
 

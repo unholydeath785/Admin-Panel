@@ -29,6 +29,8 @@ function defaultRange() {
   var day2 = currentDate.getDate() + 7;
   if (month < 10) {
     month = "0" + month;
+  }
+  if (month2 < 10) {
     month2 = "0" + month2;
   }
   if (day < 10) {
@@ -37,11 +39,11 @@ function defaultRange() {
   if (day2 < 10) {
     day2 = "0" + day2;
   }
-  var foo = day2;
-  if (parseInt(foo) + 7 > cal_days_in_month[NETWORK_ANALYTICS_CAL_SELECTABLE.month]) {
-    day2 = "0" + (day2 - (cal_days_in_month[NETWORK_ANALYTICS_CAL_SELECTABLE.month] - day));
-    if (month < 10) {
-      month2 = "0" + (month2 + 1);
+  if (day2 > cal_days_in_month[NETWORK_ANALYTICS_CAL_SELECTABLE.month]) {
+    day2 = "0" + (day2 - cal_days_in_month[NETWORK_ANALYTICS_CAL_SELECTABLE.month]);
+    month2 = parseInt(month2) + 1;
+    if (month2 < 10 && month2 - 1 <= 10) {
+      month2 = "0" + (month2);
       if (month2 > 12) {
         year2 += 1;
       }
@@ -110,7 +112,7 @@ function getDateArray(range) {
   return dateArray;
 }
 
-google.charts.load('current', {'packages':['line']});
+google.charts.load('current', {'packages':['line','corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function getSubMonth(mm) {
@@ -169,7 +171,6 @@ function drawChart() {
   for (var i = 0; i < dateArray.length; i++) {
     data.addColumn('number',dateArray[i]);
   }
-
   var rows = $.ajax({
     type: "POST",
     url: "Assets/Scripts/PHP/get_rows.php" + range,
@@ -180,6 +181,7 @@ function drawChart() {
       for (var i = 0; i < dateArray.length; i++) {
         map[getSubDate(dateArray[i])] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       }
+
       for (var key in countMap) {
         var date = key.substring(0,10);
         var index = parseInt(key.substring(11));

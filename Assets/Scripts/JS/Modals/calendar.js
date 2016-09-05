@@ -1,9 +1,12 @@
+
 var cal_days_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var cal_months_labels = ['January','February','March','April','May','June'
                      ,'July','August','September','October'
                      ,'November','December'];
 var cal_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31 , 30, 31, 30, 31];
 var cal_current_date = new Date();
+
+const NETWORK_ANALYTICS_CAL_SELECTABLE = new Calendar(cal_current_date.getMonth(), cal_current_date.getFullYear());
 
 function Calendar(month, year) {
   this.month = (isNaN(month) || month == null) ? cal_current_date.getMonth() : month;
@@ -129,5 +132,3 @@ Calendar.prototype.generateHTML = function () {
 Calendar.prototype.getHTML = function () {
     return this.html;
 }
-
-const NETWORK_ANALYTICS_CAL_SELECTABLE = new Calendar(cal_current_date.getMonth(), cal_current_date.getFullYear());

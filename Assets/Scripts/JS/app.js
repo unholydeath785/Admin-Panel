@@ -11,7 +11,9 @@ $(document).ready(function() {
     $('.navbar-block').css('min-height', windowHeight);
   };
   setHeight();
-
+  getRooms();
+  getUnopenedMessages();
+  shortenUsername();
   $(window).resize(function() {
     setHeight();
   });
@@ -57,6 +59,7 @@ $('.messages').mouseenter(function () {
 
 $('.messages').mouseleave(function () {
   $('.message-dropdown').slideUp(100);
+  restoreThread();
 })
 
 $('.user').mouseenter(function () {
@@ -67,14 +70,14 @@ $('.user').mouseleave(function () {
   $('.user-dropdown').slideUp(100);
 })
 
-$('#close-container').click(function () {
+$('.close-container').click(function () {
   $(this).parent().parent().parent().fadeOut(250, function () {
     $(this).remove();
   });
 })
 
 showing = true;
-$('#minimize-container').click(function () {
+$('.minimize-container').click(function () {
   $(this).parent().parent().parent().find('.panel-body').slideToggle(250);
   if (showing) {
     showing = false;
@@ -91,7 +94,11 @@ $('#minimize-container').click(function () {
   }
 })
 
-$('.message-item').click(function () {
-  var userto = $(this).data("userto");
-  window.location.href = "messages.php?userto="+userto;
-})
+function conversationClicked(ele) {
+  var userto = $(ele).data("userto");
+  updateUnopened(userto);
+}
+
+function shortenUsername() {
+
+}

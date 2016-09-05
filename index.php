@@ -26,7 +26,7 @@ mysqli_query($conn, $query);
       <nav class="navbar">
         <li class="user"><img src="Assets/Images/user.svg" class="messages-icon" alt="" /><img src="Assets/Images/carrot.svg" alt="" class="carrot">
           <ul class="user-dropdown">
-            <li class="username"><?php echo $_SESSION['name'] ?></li>
+            <li class="username"><?php echo $_SESSION['username'] ?></li>
             <li class="user-item" id="item-1"><a href="#profile" class="user-link">Profile</a></li>
             <li class="user-item" id="item-2"><a href="#setting" class="user-link">Settings</a></li>
             <li class="user-item" id="item-3"><a href="#help" class="user-link">Help</a></li>
@@ -35,11 +35,9 @@ mysqli_query($conn, $query);
         </li>
         <li class="messages">
           <img src="Assets/Images/mail.svg" class="messages-icon" alt="" />
-          <span class="mail-count">1</span>
+          <span class="mail-count"></span>
           <img src="Assets/Images/carrot.svg" alt="" class="carrot">
           <ul class="message-dropdown">
-            <li class="message-item" id="item-1" data-userto="test2">test2</li>
-            <li class="message-item" id="item-2" data-userto="test">test</li>
           </ul>
         </li>
       </nav>
@@ -78,13 +76,13 @@ mysqli_query($conn, $query);
         <div class="panel-header">
           <h2 class="panel-title">Network Activites</h2>
           <span class="panel-icons">
-            <div class="icon-container" id="minimize-container">
+            <div class="icon-container minimize-container" id="minimize-container">
               <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
             </div>
-            <div class="icon-container" id="setting" data-modal="calendar">
+            <div class="icon-container setting" id="setting" data-modal="calendar">
               <img src="Assets/Images/settings.svg" alt="" class="pannel-icon" id="setting">
             </div>
-            <div id="close-container" class="icon-container">
+            <div id="close-container close" class="icon-container close-container">
               <img src="Assets/Images/close.svg" alt="" class="pannel-icon" id="close">
             </div>
           </span>
@@ -94,10 +92,49 @@ mysqli_query($conn, $query);
         </div>
       </div>
     </div>
-    <!-- <div class="row" id="row-2">
-
+    <div class="row" id="row-2">
+      <div class="panel-container" id="device-usage">
+        <div class="panel-header">
+          <h2 class="panel-title">Devices</h2>
+          <span class="panel-icons">
+            <div class="icon-container minimize-container" id="minimize-container">
+              <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
+            </div>
+            <div class="icon-container setting" id="setting" data-modal="device-usage">
+              <img src="Assets/Images/settings.svg" alt="" class="pannel-icon" id="setting">
+            </div>
+            <div id="close-container" class="icon-container close-container">
+              <img src="Assets/Images/close.svg" alt="" class="pannel-icon" id="close">
+            </div>
+          </span>
+        </div>
+        <div class="panel-body">
+          <div id="piechart" style="width: 100%; height: 400px;"></div>
+        </div>
+      </div>
     </div>
-    <div class="row" id="row-3">
+    <div class="row" id="row-2">
+      <div class="panel-container" id="location">
+        <div class="panel-header">
+          <h2 class="panel-title">Location</h2>
+          <span class="panel-icons">
+            <div class="icon-container minimize-container" id="minimize-container">
+              <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
+            </div>
+            <div class="icon-container setting" id="setting" data-modal="location">
+              <img src="Assets/Images/settings.svg" alt="" class="pannel-icon" id="setting">
+            </div>
+            <div id="close-container" class="icon-container close-container">
+              <img src="Assets/Images/close.svg" alt="" class="pannel-icon" id="close">
+            </div>
+          </span>
+        </div>
+        <div class="panel-body">
+          <div id="piechart" style="width: 100%; height: 400px;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row" id="row-3">
 
     </div>
     <div class="row" id="row-4">
@@ -115,13 +152,20 @@ mysqli_query($conn, $query);
       <!-- <div class="modal" id=""></div> -->
     </div>
 
+    <!--- TODO: -->
+    <!-- Adjust minimization of containers -->
+    <!-- Adjust username length -->
+
     <!-- Computer Only Cover -->
 
+    <!-- <script src="Assets/Scripts/JS/platform.js" charset="utf-8"></script> -->
     <script src="Assets/Scripts/JS/jquery.js" charset="utf-8"></script>
-    <script src="Assets/Scripts/JS/main.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/app.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/Modals/modal.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/Modals/calendar.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/get-chatrooms.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="Assets/Scripts/JS/network_analytics.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/network-analytics.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/device-usage.js" charset="utf-8"></script> -->
     </body>
 </html>

@@ -13,7 +13,7 @@ if ($username == "" || $message == "" || $userto == "") {
   die();
 }
 
-$result = $db->prepare("INSERT INTO `messages` VALUES('',?,?,?,'')");
+$result = $db->prepare("INSERT INTO `messages` VALUES('',?,?,?,'','')");
 $result->bind_param("sss", $username, $message, $userto);
 $result->execute();
 ?>

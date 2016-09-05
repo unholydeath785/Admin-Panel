@@ -9,7 +9,7 @@ if ($db -> connect_error) {
 $userfrom = stripslashes(htmlspecialchars($_GET['userfrom']));
 $username = stripslashes(htmlspecialchars($_GET['username']));
 
-$result = $db->prepare("SELECT * FROM messages WHERE (userto=(?) AND username=(?)) OR (userto=(?) AND username=(?))");
+$result = $db->prepare("SELECT * FROM `messages` WHERE (userto=(?) AND username=(?)) OR (userto=(?) AND username=(?))");
 $result->bind_param("ssss",$username, $userfrom, $userfrom, $username);
 $result->execute();
 

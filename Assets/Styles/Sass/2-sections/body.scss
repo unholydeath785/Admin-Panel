@@ -1,11 +1,33 @@
+#row-2 {
+  margin-top: 550px;
+}
+
+#network-analytics {
+  width: 90%;
+}
+
+#device-usage {
+  width: 33%;
+  .panel-title {
+    width: 50%;
+  }
+  z-index: 2;
+}
+
+#location {
+  width: 52%;
+  margin-left: 46%;
+}
+
 .row {
   position: absolute;
   margin-top: 100px;
   width: 100%;
   display: flex;
   .panel-container {
+    min-width: 36%;
     margin-left: 100px;
-    width: 90%;
+    width: 50%;
     background-color: rgb(185, 185, 185);
     border: 2px solid rgb(156, 156, 156);
     .panel-header {
@@ -19,7 +41,7 @@
       .panel-icons {
         height: inherit;
         align-self: flex-end;
-        margin-left: 50%;
+        margin-left: 45%;
         display: flex;
         .icon-container {
           height: inherit;

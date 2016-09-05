@@ -4,7 +4,7 @@ $('.modal-close').click(function () {
   })
 })
 
-$('#setting').click(function () {
+$('.setting').click(function () {
   var clicked = this;
   $('.modal-overlay').slideDown(250,function () {
     $('#'+$(clicked).data('modal')).slideDown(250);
