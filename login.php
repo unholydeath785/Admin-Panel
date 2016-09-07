@@ -3,7 +3,7 @@ include_once 'Assets/Scripts/PHP/connect.php';
 session_start();
 if (isset($_SESSION['username']) && $_SESSION['username'] !='') {
   // header("Location:http://www.mundanewebsitename.me/Admin-Panel/index.php");
-  // header("Location:index.php");
+  header("Location:index.php?zone=".$_GET['zone']);
 }
 if (isset($_POST['submit'])) {
   // $dbh = new PDO('mysql:dbname=unholyde_ath7856_AdminPanel;host=localhost','unholyde_ath7856','Bertschi2012');
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['id'] = $id;
         $_SESSION['site'] = "LittleBit";
         $_SESSION['name'] = "Evan";
-        // $url = "http://mundanewebsitename.me/Admin-Panel/index.php?zone=".$_GET['zone'];
+        $url = "http://mundanewebsitename.me/Admin-Panel/index.php?zone=".$_GET['zone'];
         $url = "index.php?zone=".$_GET['zone'];
         $_SESSION['zone'] = $_GET['zone'];
         header("Location:".$url);
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
       var tz = jstz.determine();
       var timezone = tz.name();
       // var url = "http://mundanewebsitename.me/Admin-Panel/login.php" +'?zone=' + timezone;
-      var url = "login.php" +'?zone=' + timezone;
+      var url = "http://localhost/Admin-Panel/login.php" +'?zone=' + timezone;
       var currentUrl = window.location.href;
       if (currentUrl != url) {
           window.location.href = url;

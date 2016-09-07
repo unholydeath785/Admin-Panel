@@ -76,21 +76,50 @@ $('.close-container').click(function () {
   });
 })
 
-showing = true;
+showing = [{row:"row-1", showing:true, height:427}, {row:"row-2", showing:true, height:477}, {row:"row-2", showing:true, height:477}];
 $('.minimize-container').click(function () {
+  var index = $(this).data("panel-id");
   $(this).parent().parent().parent().find('.panel-body').slideToggle(250);
-  if (showing) {
-    showing = false;
+  if (showing[index].showing) {
+    showing[index].showing = false;
     $(this).rotate(180);
     $(this).parent().parent().parent().css({
       height:"75px"
     })
+    var rowID = $(this).parent().parent().parent().parent().prop("id");
+    for (var i = 0; i < showing.length; i++) {
+      if (rowID == showing[i].row) {
+        if (i + 1 < showing.length && showing[i + 1].row != rowID) {
+          $(this).parent().parent().parent().parent().css({
+            height:"75px"
+          })
+          var margin = 200;
+          console.log($(this).parent().parent().parent().parent().parent().find('#row-' + (index + 2)));
+          $(this).parent().parent().parent().parent().parent().find('#row-' + (index + 2)).css({
+            "margin-top":margin
+          }).animate();
+        }
+      }
+    }
+    console.log();
   } else {
-    showing = true;
+    showing[index].showing = true;
     $(this).rotate(360);
     $(this).parent().parent().parent().css({
-      height:"427px"
+      height:showing[index].height
     })
+    var rowID = $(this).parent().parent().parent().parent().prop("id");
+    for (var i = 0; i < showing.length; i++) {
+      if (rowID == showing[i].row) {
+        $(this).parent().parent().parent().parent().css({
+          height:showing[i].height
+        })
+        var margin = 550;
+        $(this).parent().parent().parent().parent().parent().find('#row-' + (index + 2)).css({
+          "margin-top":margin
+        })
+      }
+    }
   }
 })
 
@@ -100,5 +129,10 @@ function conversationClicked(ele) {
 }
 
 function shortenUsername() {
-
+  if ($('#shorten').text().length > 9) {
+    var text = $('#shorten').text()
+    text = text.substring(0,9);
+    text += "...";
+    $('#shorten').text(text);
+  }
 }

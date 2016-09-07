@@ -5,9 +5,6 @@ function updateDeviceUsage() {
 }
 
 function deviceChart() {
-	var data = google.visualization.arrayToDataTable([
-		['Device', 'Percentage']
-	]);
 	$.ajax({
 		type:"GET",
 		url:"Assets/Scripts/PHP/get_device_usage.php",
@@ -16,12 +13,17 @@ function deviceChart() {
 			var ar = [];
 			for (var i in devices) {
 				var array = [];
-				array.push(devices[i].device);
-				array.push(devices[i].count);
+				array[0] = devices[i].device;
+				array[1] = parseInt(devices[i].count);
 				ar.push(array);
 			}
-			data.addRows(ar);
+			var data = new google.visualization.DataTable();
+			data.addColumn('string','Devices');
+			data.addColumn('number','Count');
+			data.addRows(ar)
 			var options = {
+				title:"Device Usage",
+				subtitle:"User devices used on website",
 				height:400,
 				pieHole:0.45
 			};

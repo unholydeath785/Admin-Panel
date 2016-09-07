@@ -4,15 +4,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] =='') {
   // header("Location:http://www.mundanewebsitename.me/Admin-Panel/login.php");
   header("Location: login.php");
 }
-$conn = mysqli_connect("localhost","root","","Admin-Panel");
-// $conn = mysqli_connect("localhost","unholyde_ath7856","Bertschi2012","unholyde_ath7856_AdminPanel");
-date_default_timezone_set($_GET['zone']);
-$timestamp = date("H");
-$day = date("j");
-$month = date("n");
-$year = date("Y");
-$query = "INSERT INTO access (time,date) VALUES (".$timestamp.",NOW())";
-mysqli_query($conn, $query);
+include_once 'Assets/Scripts/PHP/update_acsess.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +18,7 @@ mysqli_query($conn, $query);
       <nav class="navbar">
         <li class="user"><img src="Assets/Images/user.svg" class="messages-icon" alt="" /><img src="Assets/Images/carrot.svg" alt="" class="carrot">
           <ul class="user-dropdown">
-            <li class="username"><?php echo $_SESSION['username'] ?></li>
+            <li id="shorten" class="username"><?php echo $_SESSION['username'] ?></li>
             <li class="user-item" id="item-1"><a href="#profile" class="user-link">Profile</a></li>
             <li class="user-item" id="item-2"><a href="#setting" class="user-link">Settings</a></li>
             <li class="user-item" id="item-3"><a href="#help" class="user-link">Help</a></li>
@@ -76,7 +68,7 @@ mysqli_query($conn, $query);
         <div class="panel-header">
           <h2 class="panel-title">Network Activites</h2>
           <span class="panel-icons">
-            <div class="icon-container minimize-container" id="minimize-container">
+            <div class="icon-container minimize-container" id="minimize-container" data-panel-id="0">
               <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
             </div>
             <div class="icon-container setting" id="setting" data-modal="calendar">
@@ -97,7 +89,7 @@ mysqli_query($conn, $query);
         <div class="panel-header">
           <h2 class="panel-title">Devices</h2>
           <span class="panel-icons">
-            <div class="icon-container minimize-container" id="minimize-container">
+            <div class="icon-container minimize-container" id="minimize-container" data-panel-id="1">
               <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
             </div>
             <div class="icon-container setting" id="setting" data-modal="device-usage">
@@ -112,13 +104,11 @@ mysqli_query($conn, $query);
           <div id="piechart" style="width: 100%; height: 400px;"></div>
         </div>
       </div>
-    </div>
-    <div class="row" id="row-2">
       <div class="panel-container" id="location">
         <div class="panel-header">
           <h2 class="panel-title">Location</h2>
           <span class="panel-icons">
-            <div class="icon-container minimize-container" id="minimize-container">
+            <div class="icon-container minimize-container" id="minimize-container" data-panel-id="2">
               <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
             </div>
             <div class="icon-container setting" id="setting" data-modal="location">
@@ -133,6 +123,8 @@ mysqli_query($conn, $query);
           <div id="piechart" style="width: 100%; height: 400px;"></div>
         </div>
       </div>
+    </div>
+    <div class="row" id="row-3">
     </div>
     <!-- <div class="row" id="row-3">
 
@@ -153,7 +145,6 @@ mysqli_query($conn, $query);
     </div>
 
     <!--- TODO: -->
-    <!-- Adjust minimization of containers -->
     <!-- Adjust username length -->
 
     <!-- Computer Only Cover -->
@@ -166,6 +157,7 @@ mysqli_query($conn, $query);
     <script src="Assets/Scripts/JS/get-chatrooms.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="Assets/Scripts/JS/network-analytics.js" charset="utf-8"></script>
-    <script src="Assets/Scripts/JS/device-usage.js" charset="utf-8"></script> -->
+    <script src="Assets/Scripts/JS/device-usage.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/location.js" charset="utf-8"></script>
     </body>
 </html>
