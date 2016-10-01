@@ -90,5 +90,240 @@
       }
     }
   }
+}
+#location-modal {
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  .modal-close {
+    margin-left: 47%;
+    &:hover {
+      background-color:white;
+      cursor: pointer;
+    }
+  }
+  .modal-title {
+    background-color:rgb(38, 167, 99);
+    text-align: center;
+    padding-top: 25px;
+  }
+  .modal-info {
+    font-size: 18px;
+    line-height: 2.0;
+    margin: 15px 25px 25px;
+    #hyper {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid rgb(38, 167, 99);
+      &:hover {
+        font-weight: bold;
+        color: rgb(82, 82, 82);
+        border-bottom: 2px solid rgb(38, 167, 99);
+      }
+    }
+  }
 
+  .btn-ok {
+    margin-left: 15%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: rgb(47, 203, 120);
+    &:hover {
+      background-color: rgb(36, 173, 100);
+      cursor: pointer;
+    }
+    &:focus {
+      background-color:rgb(32, 150, 87);
+      outline: none;
+    }
+  }
+  .btn-no {
+    margin-left: 2%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: rgb(203, 47, 47);
+    &:hover {
+      background-color: rgb(173, 36, 36);
+      cursor: pointer;
+    }
+    &:focus {
+      background-color:rgb(150, 32, 32);
+      outline: none;
+    }
+  }
+}
+
+#todos {
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  .modal-title {
+    background-color:rgb(38, 167, 99);
+    text-align: center;
+    padding-top: 25px;
+  }
+  .modal-close {
+    margin-left: 47%;
+    &:hover {
+      background-color:white;
+      cursor: pointer;
+    }
+  }
+  .show {
+    margin: 15px 50px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    &:hover {
+      cursor: pointer;
+      color:rgb(62, 198, 50);
+    }
+  }
+  .add {
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      color:rgb(73, 73, 73);
+    }
+    .add-task {
+      margin-left:10px;
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 14px;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid rgb(0,0,0);
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid rgb(69, 140, 67);
+      }
+    }
+    .submit-task {
+      border-radius: 0;
+      border: none;
+      padding: 5px 25px;
+      font-size: 13px;
+      background-color: rgb(47, 203, 120);
+      &:hover {
+        background-color: rgb(36, 173, 100);
+        cursor: pointer;
+      }
+      &:focus {
+        background-color:rgb(32, 150, 87);
+        outline: none;
+      }
+    }
+  }
+}
+
+#edit-news {
+  height: 500px;
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0,0,0,0.75);
+  .modal-close {
+    margin-left: 47%;
+    &:hover {
+      background-color:white;
+      cursor: pointer;
+    }
+  }
+  .modal-title {
+    background-color:rgb(38, 167, 99);
+    text-align: center;
+    padding-top: 25px;
+  }
+  .summary-title {
+    text-align: center;
+  }
+  textarea {
+    width: 80%;
+    height: 100px;
+    margin-left: 10%;
+  }
+  .bg-image-txt {
+    border-top: 1px solid black;
+    padding-top: 15px;
+    text-align: center;
+  }
+  input {
+    text-align: center;
+    margin-left: 10%;
+    display:block;
+    width: 80%;
+  }
+  button {
+    margin: 25px auto;
+    text-align: center;
+    display: block;
+  }
+  .modal-info {
+    font-size: 18px;
+    line-height: 2.0;
+    margin: 15px 25px 25px;
+    #hyper {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid rgb(38, 167, 99);
+      &:hover {
+        font-weight: bold;
+        color: rgb(82, 82, 82);
+        border-bottom: 2px solid rgb(38, 167, 99);
+      }
+    }
+  }
+
+  .btn-ok {
+    margin-left: 15%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: rgb(47, 203, 120);
+    &:hover {
+      background-color: rgb(36, 173, 100);
+      cursor: pointer;
+    }
+    &:focus {
+      background-color:rgb(32, 150, 87);
+      outline: none;
+    }
+  }
+  .edit-in-editor {
+    margin-left: 40%;
+  }
+  .btn-no {
+    margin-left: 2%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: rgb(203, 47, 47);
+    &:hover {
+      background-color: rgb(173, 36, 36);
+      cursor: pointer;
+    }
+    &:focus {
+      background-color:rgb(150, 32, 32);
+      outline: none;
+    }
+  }
+  .submit-task {
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: rgb(47, 203, 120);
+    &:hover {
+      background-color: rgb(36, 173, 100);
+      cursor: pointer;
+    }
+    &:focus {
+      background-color:rgb(32, 150, 87);
+      outline: none;
+    }
+  }
 }

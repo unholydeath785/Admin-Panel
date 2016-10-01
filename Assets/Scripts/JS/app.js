@@ -5,18 +5,19 @@ jQuery.fn.rotate = function(degrees) {
 
 var toggled = false;
 $(document).ready(function() {
-  function setHeight() {
-    windowHeight = $(window).innerHeight();
-    $('.fluid-container').css('min-height', windowHeight);
-    $('.navbar-block').css('min-height', windowHeight);
-  };
   setHeight();
   getRooms();
+  setCookies();
   getUnopenedMessages();
   shortenUsername();
   $(window).resize(function() {
     setHeight();
   });
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+    $('.fluid-container').css('min-height', windowHeight);
+    $('.navbar-block').css('min-height', windowHeight);
+  };
 });
 
 $('.nav-item').click(function () {
@@ -76,7 +77,7 @@ $('.close-container').click(function () {
   });
 })
 
-showing = [{row:"row-1", showing:true, height:427}, {row:"row-2", showing:true, height:477}, {row:"row-2", showing:true, height:477}];
+var showing = [{row:"row-1", showing:true, height:427}, {row:"row-2", showing:true, height:477}, {row:"row-2", showing:true, height:477}, {row:"row-3", showing:true, height:400}];
 $('.minimize-container').click(function () {
   var index = $(this).data("panel-id");
   $(this).parent().parent().parent().find('.panel-body').slideToggle(250);
@@ -94,14 +95,12 @@ $('.minimize-container').click(function () {
             height:"75px"
           })
           var margin = 200;
-          console.log($(this).parent().parent().parent().parent().parent().find('#row-' + (index + 2)));
           $(this).parent().parent().parent().parent().parent().find('#row-' + (index + 2)).css({
             "margin-top":margin
           }).animate();
         }
       }
     }
-    console.log();
   } else {
     showing[index].showing = true;
     $(this).rotate(360);

@@ -229,6 +229,9 @@ body, html {
   background-color: #2e2d32;
   color: white;
   z-index: 2; }
+  .navbar-block .nav-link {
+    color: inherit;
+    text-decoration: none; }
   .navbar-block .nav-item {
     width: 73px;
     background-color: #2e2d32;
@@ -271,6 +274,9 @@ body, html {
 #row-2 {
   margin-top: 550px; }
 
+#row-3 {
+  margin-top: 1050px; }
+
 #network-analytics {
   width: 90%; }
 
@@ -281,7 +287,27 @@ body, html {
     width: 50%; }
 
 #location {
-  width: 50%; }
+  width: 52.75%;
+  margin-left: 1%; }
+
+.completed-todo-list {
+  display: none; }
+
+.list-title h1 {
+  font-size: 36px; }
+
+.todo-list, .completed-todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .todo-list .todo-item, .completed-todo-list .todo-item {
+    padding: 15px 0px;
+    background-color: #9d9d9d;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black; }
+    .todo-list .todo-item .todo-check, .completed-todo-list .todo-item .todo-check {
+      margin-left: 25px;
+      margin-right: 15px; }
 
 .row {
   position: absolute;
@@ -324,6 +350,96 @@ body, html {
 
 #row-1 {
   height: 431px; }
+
+.news-widget-container {
+  position: absolute;
+  margin-top: 90px;
+  width: 90%;
+  margin-left: 100px;
+  background-color: #b9b9b9;
+  border: 2px solid #9c9c9c;
+  height: 800px; }
+  .news-widget-container .head {
+    width: 100%;
+    border-bottom: 2px solid #9c9c9c; }
+    .news-widget-container .head .title {
+      margin-left: 15px; }
+  .news-widget-container .body .row {
+    height: 400px;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    position: static;
+    flex-direction: column; }
+    .news-widget-container .body .row .control-title {
+      margin-left: 25px; }
+    .news-widget-container .body .row .control {
+      width: 100%;
+      display: flex;
+      flex-direction: row; }
+      .news-widget-container .body .row .control .order-by {
+        margin-left: 25px; }
+      .news-widget-container .body .row .control .news-carousel {
+        margin-left: 25px;
+        display: block;
+        width: 100% px;
+        overflow-x: scroll;
+        overflow-y: hidden; }
+        .news-widget-container .body .row .control .news-carousel .slider {
+          display: flex;
+          width: 2412px; }
+          .news-widget-container .body .row .control .news-carousel .slider .slide {
+            background-image: url("http://placehold.it/400x250");
+            display: inline-block;
+            border: 1px solid black;
+            width: 400px;
+            height: 250px;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover; }
+            .news-widget-container .body .row .control .news-carousel .slider .slide .edit {
+              text-align: center;
+              margin-left: 175px;
+              width: 50px;
+              border: none;
+              background-color: #f1f1f1;
+              border: 1px solid black; }
+              .news-widget-container .body .row .control .news-carousel .slider .slide .edit:hover {
+                cursor: pointer; }
+              .news-widget-container .body .row .control .news-carousel .slider .slide .edit:focus {
+                box-shadow: none;
+                outline: none;
+                background-color: #c23131; }
+            .news-widget-container .body .row .control .news-carousel .slider .slide .title {
+              margin: 0;
+              padding: 0;
+              margin-top: 175px;
+              height: 75px;
+              color: white;
+              background-color: rgba(0, 0, 0, 0.77);
+              padding-top: 5px;
+              padding-left: 25px; }
+              .news-widget-container .body .row .control .news-carousel .slider .slide .title:hover {
+                cursor: pointer;
+                transition: 0.5s height ease-in-out, 0.5s margin ease-in-out;
+                height: 250px;
+                margin-top: 0; }
+
+#add {
+  display: block; }
+  #add button {
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 36px;
+    width: 100px;
+    font-size: 18px;
+    color: white;
+    background-color: #15d228;
+    border: 1px solid #14b324; }
+    #add button:focus {
+      outline: none; }
+    #add button:hover {
+      cursor: pointer; }
 
 .modal-overlay {
   display: none;
@@ -400,6 +516,193 @@ body, html {
         background-color: #dbdbdb; }
       #calendar .calendar-table .week:hover {
         cursor: pointer; }
+
+#location-modal {
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+  #location-modal .modal-close {
+    margin-left: 47%; }
+    #location-modal .modal-close:hover {
+      background-color: white;
+      cursor: pointer; }
+  #location-modal .modal-title {
+    background-color: #26a763;
+    text-align: center;
+    padding-top: 25px; }
+  #location-modal .modal-info {
+    font-size: 18px;
+    line-height: 2.0;
+    margin: 15px 25px 25px; }
+    #location-modal .modal-info #hyper {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid #26a763; }
+      #location-modal .modal-info #hyper:hover {
+        font-weight: bold;
+        color: #525252;
+        border-bottom: 2px solid #26a763; }
+  #location-modal .btn-ok {
+    margin-left: 15%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: #2fcb78; }
+    #location-modal .btn-ok:hover {
+      background-color: #24ad64;
+      cursor: pointer; }
+    #location-modal .btn-ok:focus {
+      background-color: #209657;
+      outline: none; }
+  #location-modal .btn-no {
+    margin-left: 2%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: #cb2f2f; }
+    #location-modal .btn-no:hover {
+      background-color: #ad2424;
+      cursor: pointer; }
+    #location-modal .btn-no:focus {
+      background-color: #962020;
+      outline: none; }
+
+#todos {
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+  #todos .modal-title {
+    background-color: #26a763;
+    text-align: center;
+    padding-top: 25px; }
+  #todos .modal-close {
+    margin-left: 47%; }
+    #todos .modal-close:hover {
+      background-color: white;
+      cursor: pointer; }
+  #todos .show {
+    margin: 15px 50px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black; }
+    #todos .show:hover {
+      cursor: pointer;
+      color: #3ec632; }
+  #todos .add {
+    text-align: center; }
+    #todos .add:hover {
+      cursor: pointer;
+      color: #494949; }
+    #todos .add .add-task {
+      margin-left: 10px;
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 14px;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid black; }
+      #todos .add .add-task:focus {
+        outline: none;
+        border-bottom: 3px solid #458c43; }
+    #todos .add .submit-task {
+      border-radius: 0;
+      border: none;
+      padding: 5px 25px;
+      font-size: 13px;
+      background-color: #2fcb78; }
+      #todos .add .submit-task:hover {
+        background-color: #24ad64;
+        cursor: pointer; }
+      #todos .add .submit-task:focus {
+        background-color: #209657;
+        outline: none; }
+
+#edit-news {
+  height: 500px;
+  -webkit-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -12px 10px 5px 0px rgba(0, 0, 0, 0.75); }
+  #edit-news .modal-close {
+    margin-left: 47%; }
+    #edit-news .modal-close:hover {
+      background-color: white;
+      cursor: pointer; }
+  #edit-news .modal-title {
+    background-color: #26a763;
+    text-align: center;
+    padding-top: 25px; }
+  #edit-news .summary-title {
+    text-align: center; }
+  #edit-news textarea {
+    width: 80%;
+    height: 100px;
+    margin-left: 10%; }
+  #edit-news .bg-image-txt {
+    border-top: 1px solid black;
+    padding-top: 15px;
+    text-align: center; }
+  #edit-news input {
+    text-align: center;
+    margin-left: 10%;
+    display: block;
+    width: 80%; }
+  #edit-news button {
+    margin: 25px auto;
+    text-align: center;
+    display: block; }
+  #edit-news .modal-info {
+    font-size: 18px;
+    line-height: 2.0;
+    margin: 15px 25px 25px; }
+    #edit-news .modal-info #hyper {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid #26a763; }
+      #edit-news .modal-info #hyper:hover {
+        font-weight: bold;
+        color: #525252;
+        border-bottom: 2px solid #26a763; }
+  #edit-news .btn-ok {
+    margin-left: 15%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: #2fcb78; }
+    #edit-news .btn-ok:hover {
+      background-color: #24ad64;
+      cursor: pointer; }
+    #edit-news .btn-ok:focus {
+      background-color: #209657;
+      outline: none; }
+  #edit-news .edit-in-editor {
+    margin-left: 40%; }
+  #edit-news .btn-no {
+    margin-left: 2%;
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: #cb2f2f; }
+    #edit-news .btn-no:hover {
+      background-color: #ad2424;
+      cursor: pointer; }
+    #edit-news .btn-no:focus {
+      background-color: #962020;
+      outline: none; }
+  #edit-news .submit-task {
+    border-radius: 0;
+    border: none;
+    padding: 5px 25px;
+    font-size: 13px;
+    background-color: #2fcb78; }
+    #edit-news .submit-task:hover {
+      background-color: #24ad64;
+      cursor: pointer; }
+    #edit-news .submit-task:focus {
+      background-color: #209657;
+      outline: none; }
 
 .msg-container {
   width: 100%; }

@@ -39,26 +39,24 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
         <img class="nav-icon" src="Assets/Images/home.svg" alt="" />
         <span class="nav-title">Home</span><span class="carrot-nav">V</span>
         <ul class="nav-options" id="home-list">
-          <li class="nav-sub-item" id="item-1">Dash</li>
+          <a class="nav-link" href="index.php?zone=America/Los_Angeles"><li class="nav-sub-item" id="item-1">Dash</li></a>
         </ul>
       </div>
       <div class="nav-item" id="">
         <img class="nav-icon" src="Assets/Images/stats.svg" alt="" />
-        <span class="nav-title">Stats</span><span class="carrot-nav">V</span>
+        <span class="nav-title">Widget</span><span class="carrot-nav">V</span>
         <ul class="nav-options" id="home-list">
-          <li class="nav-sub-item" id="item-1">One</li>
-          <li class="nav-sub-item" id="item-2">Two</li>
-          <li class="nav-sub-item" id="item-3">Three</li>
-          <li class="nav-sub-item" id="item-3">Four</li>
+          <a class="nav-link" href="news.php"><li class="nav-sub-item" id="item-1">News</li></a>
+          <a class="nav-link" href="https://forge.moltin.com/"><li class="nav-sub-item" id="item-2">Shop</li></a>
         </ul>
       </div>
       <div class="nav-item" id="">
         <img class="nav-icon" src="Assets/Images/page.svg" alt="" />
         <span class="nav-title">Pages</span><span class="carrot-nav">V</span>
         <ul class="nav-options" id="home-list">
-          <li class="nav-sub-item" id="item-1">One</li>
-          <li class="nav-sub-item" id="item-2">Two</li>
-          <li class="nav-sub-item" id="item-3">Three</li>
+          <a class="nav-link" href="home.php"><li class="nav-sub-item" id="item-1">Home</li></a>
+          <a class="nav-link" href="about.php"><li class="nav-sub-item" id="item-2">About</li></a>
+          <a class="nav-link" href="news.php"><li class="nav-sub-item" id="item-3">News</li></a>
         </ul>
       </div>
     </div>
@@ -100,7 +98,7 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
             </div>
           </span>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 400px;">
           <div id="piechart" style="width: 100%; height: 400px;"></div>
         </div>
       </div>
@@ -119,19 +117,35 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
             </div>
           </span>
         </div>
-        <div class="panel-body">
-          <div id="piechart" style="width: 100%; height: 400px;"></div>
+        <div class="panel-body" style="max-height: 400px;">
+          <div id="map" style="width: 100%; height: 400px;"></div>
         </div>
       </div>
     </div>
-    <div class="row" id="row-3">
+    <div class="row" style="margin-top:1050px" id="row-3">
+      <div class="panel-container" id="todo">
+        <div class="panel-header">
+          <h2 class="panel-title">Todos</h2>
+          <span class="panel-icons">
+            <div class="icon-container minimize-container" id="minimize-container" data-panel-id="3">
+              <img src="Assets/Images/carrot.svg" alt="" class="pannel-icon" id="carrot">
+            </div>
+            <div class="icon-container setting" id="setting" data-modal="todos">
+              <img src="Assets/Images/settings.svg" alt="" class="pannel-icon" id="setting">
+            </div>
+            <div id="close-container" class="icon-container close-container">
+              <img src="Assets/Images/close.svg" alt="" class="pannel-icon" id="close">
+            </div>
+          </span>
+        </div>
+        <div class="panel-body" style="height:400px">
+          <ul class="todo-list">
+          </ul>
+          <ul class="completed-todo-list">
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- <div class="row" id="row-3">
-
-    </div>
-    <div class="row" id="row-4">
-
-    </div> -->
 
     <!-- Modals -->
     <div class="modal-overlay">
@@ -141,7 +155,35 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
         <span id="cal-next">></span>
         <!-- JS GENERATED CODE -->
       </div>
-      <!-- <div class="modal" id=""></div> -->
+
+      <div class="modal" id="location-modal">
+        <span class="modal-close">X</span>
+        <h1 class="modal-title">Location Analytics</h1>
+        <br>
+        <p class="modal-info">
+          This Site Will Ask To Track Your Location, This is for Analytics only, It is not a big deal if you do not accept because it is soley for analytics. <span><a id="hyper" href="#">See Here For More Detail</a></span>"
+        </p>
+        <button class="btn-ok" onclick="setCookies(true);"type="button" name="button">Ok</button>
+        <button class="btn-no" onclick="setCookies(false);" type="button" name="button">No</button>
+      </div>
+
+      <div class="modal" id="todos">
+        <span class="modal-close">X</span>
+        <h1 class="modal-title">Todos</h1>
+        <div class="modal-main">
+          <div class="show">
+            <input type="checkbox" onclick="showList(this)" name="name" value="">Show completed todos.
+          </div>
+          <div class="add">
+            <span class="input-txt">Add Todo Task: </span><input class="add-task" type="text" name="name" value="">
+            <br>
+            <br>
+            <br>
+            <button class="submit-task" onclick="addTask()" name="button">Add Task</button>
+          </div>
+        </div>
+        <!-- JS GENERATED CODE -->
+      </div>
     </div>
 
     <!--- TODO: -->
@@ -149,7 +191,7 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
 
     <!-- Computer Only Cover -->
 
-    <!-- <script src="Assets/Scripts/JS/platform.js" charset="utf-8"></script> -->
+    <script src="Assets/Scripts/JS/platform.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/jquery.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/app.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/Modals/modal.js" charset="utf-8"></script>
@@ -158,6 +200,8 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="Assets/Scripts/JS/network-analytics.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/device-usage.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/todos.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9-SeXQ4aJHd-Qq8dYB23TjULjhGQeuWY&libraries=visualization&callback=getLocation"></script>
     <script src="Assets/Scripts/JS/location.js" charset="utf-8"></script>
     </body>
 </html>

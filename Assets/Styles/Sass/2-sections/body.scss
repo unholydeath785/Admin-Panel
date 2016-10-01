@@ -2,6 +2,10 @@
   margin-top: 550px;
 }
 
+#row-3 {
+  margin-top: 1050px;
+}
+
 #network-analytics {
   width: 90%;
 }
@@ -15,8 +19,35 @@
 }
 
 #location {
-  width: 50%;
-  // margin-left: 46%;
+  width: 52.75%;
+  margin-left: 1%;
+}
+
+.completed-todo-list {
+  display: none;
+}
+
+.list-title {
+  h1 {
+    font-size: 36px;
+    // font-weight: bold;
+  }
+}
+
+.todo-list, .completed-todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .todo-item {
+    padding: 15px 0px;
+    background-color: rgb(157, 157, 157);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    .todo-check {
+      margin-left: 25px;
+      margin-right: 15px;
+    }
+  }
 }
 
 .row {
@@ -74,4 +105,119 @@
 
 #row-1 {
   height: 431px;
+}
+
+.news-widget-container {
+  position: absolute;
+  margin-top: 90px;
+  width: 90%;
+  margin-left: 100px;
+  background-color: rgb(185, 185, 185);
+  border: 2px solid rgb(156, 156, 156);
+  height: 800px;
+  .head {
+    width:100%;
+    border-bottom: 2px solid rgb(156, 156, 156);
+    .title {
+      margin-left:15px;
+    }
+  }
+  .body {
+    .row {
+      height: 400px;
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      position: static;
+      flex-direction: column;
+      .control-title {
+        margin-left: 25px;
+      }
+      .control {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .order-by {
+          margin-left:25px;
+        }
+        .news-carousel {
+          margin-left: 25px;
+          display:block;
+          width: 100%px;
+          overflow-x: scroll;
+          overflow-y: hidden;
+          .slider {
+            display: flex;
+            width: 2412px;
+            .slide {
+              background-image: url("http://placehold.it/400x250");
+              display: inline-block;
+              border: 1px solid black;
+              width: 400px;
+              height: 250px;
+              background-position: center;
+              background-repeat: repeat;
+              background-size: cover;
+              .edit {
+                text-align: center;
+                margin-left:175px;
+                width: 50px;
+                border: none;
+                background-color:rgb(241, 241, 241);
+                border:1px solid black;
+                &:hover {
+                  cursor: pointer;
+                }
+                &:focus {
+                  box-shadow: none;
+                  outline: none;
+                  background-color: rgb(194, 49, 49);
+                }
+              }
+              .title {
+                margin: 0;
+                padding: 0;
+                margin-top:175px;
+                height: 75px;
+                color:white;
+                background-color: rgba(0, 0, 0, 0.77);
+                padding-top: 5px;
+                padding-left:25px;
+                &:hover {
+                  cursor: pointer;
+                  transition: 0.5s height ease-in-out, 0.5s margin ease-in-out;
+                  height: 250px;
+                  margin-top:0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#add {
+  display: block;
+  button {
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 36px;
+    width: 100px;
+    font-size: 18px;
+    color:white;
+    background-color:rgb(21, 210, 40);
+    border: 1px solid rgb(20, 179, 36);
+    &:focus {
+      outline:none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+#edit {
+
 }

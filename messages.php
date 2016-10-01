@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['username']) || $_SESSION['username'] =='') {
+  // header("Location:http://www.mundanewebsitename.me/Admin-Panel/login.php");
+  header("Location: login.php");
+}
 $userto = stripslashes(htmlspecialchars($_GET['userto']));
 ?>
 <!DOCTYPE html>
