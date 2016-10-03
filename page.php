@@ -9,11 +9,11 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] =='') {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>News</title>
+		<title><?php print($_GET['page']); ?></title>
     <link rel="stylesheet" href="Assets/Styles/CSS/main.css" media="screen" title="no title" charset="utf-8">
 	</head>
 	<body>
-		<div class="navbar-top">
+    <div class="navbar-top">
       <nav class="navbar">
         <li class="user"><img src="Assets/Images/user.svg" class="messages-icon" alt="" /><img src="Assets/Images/carrot.svg" alt="" class="carrot">
           <ul class="user-dropdown">
@@ -59,45 +59,17 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] =='') {
         </ul>
       </div>
     </div>
-		<div class="news-widget-container">
-			<div class="head">
-				<h1 class="title">News Widget</h1>
-			</div>
-			<div class="body">
-				<div class="row" id="news-row-1">
-					<h2 class="control-title">Display</h2>
-					<div class="control">
-						<select name="" onchange="$('.slider').html(''); getNews();" class="order-by">
-							<option value="title|ASC">(Asc) Title</option>
-							<option value="title|DESC">(Desc) Title</option>
-							<option value="date|ASC">(Asc) Date</option>
-							<option value="date|DESC">(Desc) Date</option>
-						</select>
-						<div class="news-carousel">
-							<div class="slider">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row" id="news-row-2">
-					<div class="control" id="add">
-						<h2 class="control-title">Add</h2>
-						<a class="editor-link" href="text-editor.php?widget=news&name=new-file"><button>Add News</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="modal-overlay">
-			<div class="modal" data-slide="0" id="edit-news">
-        <span class="modal-close">X</span>
-        <!-- JS GENERATED CODE -->
+    <div class="page-container">
+      <div class="spinner">
+        <div class="loader">Loading...</div>
       </div>
-		</div>
-		<script src="Assets/Scripts/JS/jquery.js" charset="utf-8"></script>
+    </div>
+    <button type="button" class="save-button">Submit</button>
+    <script src="Assets/Scripts/JS/jquery.js" charset="utf-8"></script>
     <script src="Assets/Scripts/JS/app.js" charset="utf-8"></script>
 		<script src="Assets/Scripts/JS/get-chatrooms.js" charset="utf-8"></script>
 		<script src="Assets/Scripts/JS/location.js" charset="utf-8"></script>
 		<script src="Assets/Scripts/JS/Modals/modal.js" charset="utf-8"></script>
-		<script src="Assets/Scripts/JS/get-news.js" charset="utf-8"></script>
+    <script src="Assets/Scripts/JS/get-html.js" charset="utf-8"></script>
 	</body>
 </html>

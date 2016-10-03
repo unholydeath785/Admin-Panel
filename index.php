@@ -54,9 +54,9 @@ include_once 'Assets/Scripts/PHP/update_acsess.php';
         <img class="nav-icon" src="Assets/Images/page.svg" alt="" />
         <span class="nav-title">Pages</span><span class="carrot-nav">V</span>
         <ul class="nav-options" id="home-list">
-          <a class="nav-link" href="home.php"><li class="nav-sub-item" id="item-1">Home</li></a>
-          <a class="nav-link" href="about.php"><li class="nav-sub-item" id="item-2">About</li></a>
-          <a class="nav-link" href="news.php"><li class="nav-sub-item" id="item-3">News</li></a>
+          <a class="nav-link" href="page.php?page=home"><li class="nav-sub-item" id="item-1">Home</li></a>
+          <a class="nav-link" href="page.php?page=about"><li class="nav-sub-item" id="item-2">About</li></a>
+          <a class="nav-link" href="page.php?page=news"><li class="nav-sub-item" id="item-3">News</li></a>
         </ul>
       </div>
     </div>
